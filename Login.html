@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+	<style>
+		body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+	.login {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid #333;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Space between elements */
+        }
+
+        .login h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .login input {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login button {
+            width: 95%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login button:hover {
+            background-color: #555;
+        }
+
+        .login a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .show-password {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .login a:hover {
+            text-decoration: underline;
+        }
+</style>
+</head>
+<body>
+<div class="login">	
+	<h1>Login</h1>	
+	<input type="text" id="username" name="Username" placeholder="Username" required>
+	<input type="password" id="password" name="password" placeholder="Password" required>
+	<button onclick="redirect()">Submit</button>
+	<div class="show-password">
+            <input type="checkbox" id="show-password-checkbox" onclick="togglepassword()"> 
+            <label for="show-password-checkbox">Show Password</label>
+        </div>
+	<a href="#">Forgot Password?</a>
+</div>
+    <script>
+        function togglepassword() {
+            var passwordField = document.getElementById("password");
+            var checkbox = document.getElementById("show-password-checkbox");
+            if (checkbox.checked) {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+
+        function redirect(){
+        	window.location.href="page1.html";
+        }
+    </script>
+</body>
+</html>
